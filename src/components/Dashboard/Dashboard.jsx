@@ -1,6 +1,7 @@
 import React from 'react'
+import { observer } from 'mobx-react'
 
-export default function Analytics() { 
+const Dashboard = observer((props) => { 
     
     
     return (
@@ -8,4 +9,6 @@ export default function Analytics() {
             this is Analytics
         </div>
       )
-}
+})
+
+export default Dashboard

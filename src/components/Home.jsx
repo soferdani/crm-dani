@@ -3,8 +3,9 @@ import { BrowserRouter as Router, Route, Link} from 'react-router-dom'
 import ClientMain from './Client/ClientMain'
 import ActionMain from './Actions/ActionsMain'
 import Dashboard from './Dashboard/Dashboard'
+import {observer, inject } from 'mobx-react'
 
-export default function Home() { 
+const Home = inject('alldata') (observer((props) =>{ 
     
     return (
         <Router>
@@ -18,4 +19,6 @@ export default function Home() {
             <Route exact path="/analytics" component={Dashboard}/>
         </Router> 
       )
-}
+}))
+
+export default Home

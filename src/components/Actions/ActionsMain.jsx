@@ -1,11 +1,17 @@
 import React from 'react'
+import {observer, inject } from 'mobx-react'
+import UpdateClient from './UpdateClient'
+import AddClient from './AddClient'
 
-export default function ActionsPage() { 
-    
+
+const ActionsPage = inject('alldata') (observer((props) => { 
     
     return (
         <div>
-            this is actions
+            <UpdateClient></UpdateClient>
+            <AddClient></AddClient>
         </div>
       )
-}
+}))
+
+export default ActionsPage

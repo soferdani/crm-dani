@@ -1,6 +1,5 @@
 import React from 'react'
 import {observer, inject } from 'mobx-react'
-import data from '../../react-crm-starter-data/data' //asinc later !!Bring data!!
 import ClientRow from './ClientRow'
 
 //materialUi import
@@ -19,20 +18,11 @@ const useStyles = makeStyles({
     },
 });
 
-function createData(id, name, email, firstContact, emailType, sold, owner, country) {
-    return {id, name, email, firstContact, emailType, sold, owner, country };
-}
-
 //materialUi style
 
-
 const ClientMain = inject('alldata')(observer((props) => { 
-    const classes = useStyles();
-
-    for (let i in data) {
-        props.alldata.addClient(data[i])
-    }
-
+  const classes = useStyles();
+  
     return (
         <TableContainer component={Paper}>
         <Table className={classes.table} aria-label="simple table">
@@ -53,10 +43,6 @@ const ClientMain = inject('alldata')(observer((props) => {
           </TableBody>
         </Table>
       </TableContainer>
-
-        // <div>
-        //     this is client
-        // </div>
     )
 }))
     

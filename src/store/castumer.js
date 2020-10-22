@@ -3,7 +3,8 @@ import { action, makeObservable, observable } from 'mobx'
 
 export default class costumer {
     id
-    name
+    firstName
+    surname
     email
     firstContact
     emailType
@@ -11,9 +12,10 @@ export default class costumer {
     owner
     country
 
-    constructor(id, name, email, firstContact, emailType, sold, owner, country) {
+    constructor(id, firstName, surname, email, firstContact, emailType, sold, owner, country) {
         this.id = id
-        this.name = name
+        this.firstName = firstName
+        this.surname = surname
         this.email = email
         this.firstContact = firstContact
         this.emailType = emailType
@@ -23,7 +25,8 @@ export default class costumer {
 
         makeObservable(this, {
             id: observable,
-            name: observable,
+            firstName: observable,
+            surname:observable,
             email: observable,
             firstContact: observable,
             emailType: observable,
